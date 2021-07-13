@@ -127,29 +127,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="aboutUs.html">About us</a>
                     </li>
-
-
-                    <!-- <c:choose>
-                        <c:when test="${ADMIN != null}">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="javascript:;">Manage Room</a>
-                            </li>
-
-                        </c:when>
-
-                        <c:when test="${CLIENT  != null}">
-
-                        </c:when>
-                    </c:choose> -->
-
                 </ul>
-
                 <ul class="navbar-nav">
-
-                    <!-- <c:choose>
-                        <c:when test="${ADMIN != null}">
-
-                            <div class="offset-md-3">
+                    <!-- <div class="offset-md-3">
                                 <li>
                                     <form action="ProfileController" method="POST">
                                         <input type="text" name="id" value="${ADMIN.getID()}" hidden="hidden">
@@ -158,16 +138,15 @@
                                         <input type="submit" class="btn btn-success" value="My Profile"></button>
                                     </form>
                                 </li>
-                            </div>
+                            </div> -->
 
-                            <div class="offset-md-3">
-                                <li class="nav-item">
-                                    <a href="manageUserController?command=Logout" class="btn btn-danger" role="button"
-                                        data-bs-toggle="button">Logout</a>
-                                </li>
-                            </div>
+                    <div class="offset-md-3">
+                        <li class="nav-item">
+                            <a href="mainPage.html?id=1" role="button" data-bs-toggle="button">role</a>
+                        </li>
+                    </div>
 
-                        </c:when>
+                    <!-- </c:when>
 
                         <c:when test="${CLIENT  != null}">
 
@@ -203,10 +182,7 @@
                                     <a href="NavBarController?command=Login-Page" class="btn btn-dark" role="button"
                                         data-bs-toggle="button">Login</a>
                                 </li>
-                            </div>
-                        </c:otherwise>
-
-                    </c:choose> -->
+                            </div> -->
 
                 </ul>
             </div>
@@ -230,8 +206,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Book A Room</h5>
                         <p class="card-text">Search, and book for any available room</p> -->
-                        <!-- <a href="viewRoomAvailable.html"  -->
-                        <!-- <a href="viewRoom.html" class="btn btn-primary stretched-link">Book Room</a>
+    <!-- <a href="viewRoomAvailable.html"  -->
+    <!-- <a href="viewRoom.html" class="btn btn-primary stretched-link">Book Room</a>
                     </div>
                 </div>
             </div>
@@ -241,16 +217,16 @@
                     <div class="card-body">
                         <h5 class="card-title">My Booking</h5>
                         <p class="card-text">See if you have any upcoming booking</p> -->
-                        <!-- <form name="viewMyBooking" method="post"
+    <!-- <form name="viewMyBooking" method="post"
                                     action="${pageContext.request.contextPath}/ClientController"> -->
-                        <!-- <div class="d-grid gap-2 mx-auto pt-1"> -->
-                            <!-- <input class=" btn btn-primary " type="submit" style="width:55%" id="command" name="command"
+    <!-- <div class="d-grid gap-2 mx-auto pt-1"> -->
+    <!-- <input class=" btn btn-primary " type="submit" style="width:55%" id="command" name="command"
                                 value="My-Booking"> -->
-                            <!-- <a href="viewMyBooking.html" class="btn btn-primary stretched-link">My Booking</a>
+    <!-- <a href="viewMyBooking.html" class="btn btn-primary stretched-link">My Booking</a>
                         </div> -->
 
-                        <!-- <input type="hidden" name="clientID" value="%=client.getID()% "> -->
-                        <!-- </form>
+    <!-- <input type="hidden" name="clientID" value="%=client.getID()% "> -->
+    <!-- </form>
                     </div>
                 </div>
             </div>
@@ -343,28 +319,22 @@
 
         </c:when> -->
 
-    <c:otherwise>
-        <div class="jumbotron">
-            <div class="container">
-                <a href="mainPage.html">
-                    <img src="image/cover.png" alt="Snow" style="width:100%;">
-                    <div class="centered" style="color:white;">
-                        <h1 class="display-3">
-                            <b>Welcome to Faiq Hotel</b>
-                        </h1>
-                </a>
+    <div class="jumbotron">
+        <div class="container">
+            <a href="mainPage.html?id=2">
+                <img src="image/cover.png" alt="Snow" style="width:100%;">
+                <div class="centered" style="color:white;">
+                    <h1 class="display-3">
+                        <b>Welcome to Faiq Hotel</b>
+                    </h1>
+            </a>
 
 
-            </div>
         </div>
-        </div>
-    </c:otherwise>
-
-    </c:choose>
+    </div>
+    </div>
 
     </main>
-
-
 
     <footer class="container">
 
@@ -376,33 +346,6 @@
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
     <script>
-        // $('#traveldate').datepicker({
-        //     uiLibrary: 'bootstrap4',
-        //     format: 'dd-mm-yyyy'
-        // });
-
-        // $("form").submit(function (event) {
-        //     event.preventDefault();
-        //     alert($("#traveldate").val());
-        //     return false;
-        // });
-
-        $(document).ready(function () {
-
-            $.ajax({
-                type: "GET",
-                url: "http://localhost/webTechTest/api/getSingleUser.php?id=" + "1",
-                dataType: "json",
-                success: function (data, status, xhr) {
-                    var name = "Welcome " + data.name;
-                    document.querySelector("#name").innerHTML = name;
-                },
-
-                error: function () {
-                    alert(status)
-                }
-            });
-        });
     </script>
 
 </body>
