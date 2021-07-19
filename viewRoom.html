@@ -301,34 +301,35 @@
     $(document).ready(function (event) {
 
         // var condi="roomStatus=unavailable";
+        console.log(int);
         var formData;
-        formData="roomStatus=available";
+        // formData="roomStatus=available";
         console.log(formData); 
       
 
-      $.ajax({
-        type: "POST",
-        url: "http://localhost/api/updateRoomStatus.php?id=" + int,
-        data: formData,
-        dataType: "json",
+      // $.ajax({
+      //   type: "POST",
+      //   url: "http://localhost/api/updateRoomStatus.php?id=" + int,
+      //   data: formData,
+      //   dataType: "json",
 
-        success: function (data, status, xhr) {
-          if (status == 'success') {
-            alert("ok, successfully add data");
-            window.location.href = "viewRoom.html";
-          } else {
-            alert(status);
-            alert("fail to insert, " + data.errormessage);
-          }
-        },
+      //   success: function (data, status, xhr) {
+      //     if (status == 'success') {
+      //       alert("ok, successfully add data");
+      //       window.location.href = "viewRoom.html";
+      //     } else {
+      //       alert(status);
+      //       alert("fail to insert, " + data.errormessage);
+      //     }
+      //   },
 
-        error: function (xhr, resp, text) {
-          alert("error " + xhr.error + ", " + resp + ", " + text);
-          console.log(xhr.responseText);
-          console.log(resp);
-          console.log(text);
-        },
-      });
+      //   error: function (xhr, resp, text) {
+      //     alert("error " + xhr.error + ", " + resp + ", " + text);
+      //     console.log(xhr.responseText);
+      //     console.log(resp);
+      //     console.log(text);
+      //   },
+      // });
     });
   }
 

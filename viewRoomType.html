@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v4.1.1">
-  <title>Faiq Hotel</title>
+  <title>Hafizul Hotel</title>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -72,7 +72,6 @@
     }
   </style>
 
-  <!-- Custom styles for this template -->
   <link href="css/navbar-top-fixed.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4962701fb8.js" crossorigin="anonymous"></script>
@@ -82,14 +81,7 @@
 </head>
 
 <body>
-  <!-- <%
-            int i=0;
-            Room room = new Room();
-            ArrayList<Room> roomSingleAvailable = (ArrayList<Room>)session.getAttribute("roomlistSingle");
-            ArrayList<Room> roomDoubleAvailable = (ArrayList<Room>)session.getAttribute("roomlistDouble");
-            ArrayList<Room> roomTripleAvailable = (ArrayList<Room>)session.getAttribute("roomlistTriple");
-            ArrayList<Room> roomQuadAvailable = (ArrayList<Room>)session.getAttribute("roomlistQuad");
-        %> -->
+
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
 
     <div class="container">
@@ -97,7 +89,7 @@
         hotel
       </span>
 
-      <a class="navbar-brand" href="#"><b>Faiq Hotel</b></a>
+      <a class="navbar-brand" href="index.html"><b>Hafizul Hotel</b></a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,91 +101,18 @@
 
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="mainPage.html">Home</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="NavBarController?command=About-Us">About us</a>
+            <a class="nav-link" href="aboutUs.html">About us</a>
           </li>
 
-
-          <!-- <c:choose>
-                         <c:when test="${ADMIN != null}">
-                             <li class="nav-item active">
-                                <a class="nav-link" href="javascript:;">Manage Room</a>
-                           </li>
-                          
-                         </c:when>
-                           
-                           <c:when test="${CLIENT  != null}">
-          
-                            </c:when>                   
-                     </c:choose> -->
 
         </ul>
 
         <ul class="navbar-nav">
 
-          <!-- <c:choose>
-            <c:when test="${ADMIN != null}">
 
-              <div class="offset-md-3">
-                <li>
-                  <form action="ProfileController" method="POST">
-                    <input type="text" name="id" value="${ADMIN.getID()}" hidden="hidden">
-                    <input type="text" name="role" value="${ADMIN.getRole()}" hidden="hidden">
-                    <input type="text" name="option" value="view" hidden="hidden">
-                    <input type="submit" class="btn btn-success" value="My Profile"></button>
-                  </form>
-                </li>
-              </div>
-
-              <div class="offset-md-3">
-                <li class="nav-item">
-                  <a href="manageUserController?command=Logout" class="btn btn-danger" role="button"
-                    data-bs-toggle="button">Logout</a>
-                </li>
-              </div>
-
-            </c:when> -->
-
-          <!-- <c:when test="${CLIENT  != null}">
-
-              <div class="offset-md-3">
-                <li>
-                  <form action="ProfileController" method="POST">
-                    <input type="text" name="id" value="${CLIENT.getID()}" hidden="hidden">
-                    <input type="text" name="role" value="${CLIENT.getRole()}" hidden="hidden">
-                    <input type="text" name="option" value="view" hidden="hidden">
-                    <input type="submit" class="btn btn-success" value="My Profile"></button>
-                  </form>
-                </li>
-              </div>
-
-              <div class="offset-md-3">
-                <li class="nav-item">
-                  <a href="manageUserController?command=Logout" class="btn btn-secondary" role="button"
-                    data-bs-toggle="button">Logout</a>
-                </li>
-              </div>
-            </c:when> -->
-
-          <!-- <c:otherwise> -->
-          <div class="offset-md-3">
-            <li class="nav-item">
-              <a href="NavBarController?command=Register-Page" class="btn btn-light" role="button"
-                data-bs-toggle="button">Register</a>
-            </li>
-          </div>
-
-          <div class="offset-md-2">
-            <li class="nav-item">
-              <a href="NavBarController?command=Login-Page" class="btn btn-dark" role="button"
-                data-bs-toggle="button">Login</a>
-            </li>
-          </div>
-          <!-- </c:otherwise> -->
-
-          <!-- </c:choose> -->
 
         </ul>
 
@@ -204,17 +123,13 @@
 
   <div class="container pb-5">
     <div class="row align-items-start justify-content-center">
-      <h1>Room Type Available in Faiq Hotel</h1>
+      <h1>Room Type Available in Hafizul Hotel</h1>
     </div>
     <div class="row align-items-center pt-4">
 
       <div class="col">
         <div class="card p-3 mb-2 bg-light text-dark" style="width: 18rem;">
-          <!-- <%
-                                byte roomImage[] =((Room)roomSingleAvailable.get(i)).getRoomImage();
-                                String imgDataBase64=new String(Base64.getEncoder().encode(roomImage));
-                            %> -->
-          <img src="data:image/gif;base64,<%= imgDataBase64 %>" class="card-img-top" alt="..." />
+          <img src="image/single.jpg" class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title">Single Room</h5>
             <p class="card-text">RM20.00/night</p>
@@ -225,11 +140,7 @@
 
       <div class="col">
         <div class="card p-3 mb-2 bg-light text-dark" style="width: 18rem;">
-          <!-- <%
-                                roomImage =((Room)roomDoubleAvailable.get(i)).getRoomImage();
-                                imgDataBase64=new String(Base64.getEncoder().encode(roomImage));
-                            %> -->
-          <img src="data:image/gif;base64,<%= imgDataBase64 %>" class="card-img-top" alt="..." />
+          <img src="image/double.jpg" class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title">Double Room</h5>
             <p class="card-text">RM40.00/night</p>
@@ -241,11 +152,8 @@
 
       <div class="col">
         <div class="card p-3 mb-2 bg-light text-dark" style="width: 18rem;">
-          <!-- <%
-                                roomImage =((Room)roomTripleAvailable.get(i)).getRoomImage();
-                                imgDataBase64=new String(Base64.getEncoder().encode(roomImage));
-                            %> -->
-          <img src="data:image/gif;base64,<%= imgDataBase64 %>" class="card-img-top" alt="..." />
+
+          <img src="image/triple.jpg" class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title">Triple Room</h5>
             <p class="card-text">RM60.00/night</p>
@@ -257,9 +165,7 @@
 
       <div class="col">
         <div class="card p-3 mb-2 bg-light text-dark" style="width: 18rem;">
-          <!-- <% roomImage=((Room) roomQuadAvailable.get(i)).getRoomImage(); imgDataBase64=new
-            String(Base64.getEncoder().encode(roomImage)); %> -->
-            <img src="data:image/gif;base64,<%= imgDataBase64 %>" class="card-img-top" alt="..." />
+            <img src="image/quad.png" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Quad Room</h5>
               <p class="card-text">RM80.00/night</p>
