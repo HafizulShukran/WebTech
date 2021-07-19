@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>My Booking</title>
+        
+        <link rel='stylesheet' href='style.css'/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <script src="https://kit.fontawesome.com/4962701fb8.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="css/navbar-top-fixed.css" rel="stylesheet">
+        
+        <style>
+            .custom-shadow {
+                box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            }
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container-custom {
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+                width: 95%;
+                padding: 10px 0 10px 200px;
+            }
+            .header-home {
+                text-align: center;
+            }
+            @media only screen and (max-width: 600px) {.container-custom {padding-left: 10px; padding-top: 110px;}}
+
+            .container {
+            position: relative;
+            text-align: center;
+
+        }
+
+        /* Bottom left text */
+        .bottom-left {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+
+        /* Top left text */
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+
+        /* Top right text */
+        .top-right {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+
+        /* Bottom right text */
+        .bottom-right {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+
+        /* Centered text */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+
+    button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    #patients {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      text-align: center;
+    }
+
+    #patients td,
+    #patients th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #patients tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #patients tr:hover {
+      background-color: #ddd;
+    }
+
+    #patients th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 22px;
+      color: black;
+    }
+
+    button:hover,
+    a:hover {
+      opacity: 0.7;
+    }
+        </style>
+        
+    </head>
+    
+    
+    <body>
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+
+            <div class="container">
+                <span class="material-icons">
+                    hotel
+                </span>
+        
+                <a class="navbar-brand" href="index.html"><b>Hafizul Hotel</b></a>
+        
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+        
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="mainPage.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="aboutUs.html">About us</a>
+                        </li>
+        
+        
+        
+        
+                    </ul>
+        
+                    <ul class="navbar-nav">
+        
+        
+        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-custom">
+            
+            <nav class="navbar navbar-dark bg-dark">
+                <div style="height:36px">
+                    <p class="navbar-brand">Edit Room</p>
+                </div>
+            </nav>
+        
+            <form id="editRoom">
+                <div class="row">
+                    <div class="col">
+                        <label>Room Number</label>
+                        <input type="text" class="form-control" name="roomNo" id="roomNo"/>
+    
+                        <label>Room Price</label>
+                        <input type="number" class="form-control" name="roomPrice" id="roomPrice" />
+                    </div>
+                    
+                    
+                    <br>
+
+                    <br>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <p>Room Type</p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="roomType" id="roomType" value="Single" />
+                            <label class="form-check-label" for="inlineRadio1">Single</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="roomType" id="roomType" value="Double" />
+                            <label class="form-check-label" for="inlineRadio2">Double</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="roomType" id="roomType" value="Triple" />
+                            <label class="form-check-label" for="inlineRadio2">Triple</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="roomType" id="roomType" value="Quad" />
+                            <label class="form-check-label" for="inlineRadio2">Quad</label>
+                        </div>
+                    </div>
+                    <br>
+
+                    <br>
+
+                </div>
+                <br>
+                <div>
+                   
+                    <input class="btn btn-primary" type="submit" value="Submit" />
+                </div>
+            </form> 
+        
+        </div>
+        
+    </body>
+    <script>
+        $(document).ready(function () {
+      const urlstring = window.location.search;
+      $.ajax({
+        type: "GET",
+        url: "http://localhost/api/getSingleRoom.php" + urlstring,
+        dataType: "json",
+        success: function (data, status, xhr) {
+          document.getElementById("roomNo").value = data.roomNo;
+          document.getElementById("roomPrice").value = data.roomPrice;
+        },
+
+        error: function () {
+          alert(status);
+        },
+      });
+    });
+
+         $("#editRoom").submit(function (event) {
+        const urlstring = window.location.search;
+        event.preventDefault();
+        var formData = $(this).serialize();
+        console.log(formData);
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/api/updateRoomInfo.php" + urlstring,
+            data: formData,
+            dataType: "json",
+
+            success: function (data, status, xhr) {
+                if (status == 'success') {
+                    alert("ok, successfully update data");
+                    window.location.href = "viewRoom.html";
+                } else {
+                    alert("fail to insert, " + formData.errormessage);
+                }
+            },
+
+            error: function (xhr, resp, text) {
+                alert("error " + xhr + ", " + resp + ", " + text);
+            },
+        });
+    });
+    </script>
+</html>
