@@ -114,7 +114,7 @@
 
                 </ul>
 
-                <ul class="navbar-nav">
+              o  <ul class="navbar-nav">
 
 
 
@@ -179,82 +179,7 @@
         </div>
     </div>
 
-    <!-- </c:when> -->
-
-    <!-- <c:when test="${ADMIN != null}"> -->
-
-    <!-- <%--untuk admin--%> -->
-
-
-    <!-- <form action="${pageContext.request.contextPath}/ManageRoomController" method="post">
-                    <div class="container pb-5">
-                        <div class="row align-items-start justify-content-center">
-                            <h1>Welcome Admin ${ADMIN.getName()}</h1>
-                        </div>
-                        <div class="row align-items-start justify-content-center">
-                            <h3>Manage Room</h3>
-                        </div>
-                        <div class="row align-items-center pt-4">
-
-                            <div class="col">
-                                <div class="card p-1 mb-2 bg-light text-dark" style="width: 18rem;">
-                                    <img src="image/cover.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Add New Room</h5>
-                                        <p class="card-text">Add and create new upcoming event.</p>
-                                        <input type="submit" class="btn btn-outline-primary btn-lg" id="command"
-                                            name="command" value="Add-Room-Form" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="card p-1 mb-2 bg-light text-dark" style="width: 18rem;">
-                                    <img src="image/cover.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Deleting Room</h5>
-                                        <p class="card-text">Delete and remove any room.</p>
-                                        <input type="submit" class="btn btn-outline-danger btn-lg" id="command"
-                                            name="command" value="Delete-Room" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="card p-1 mb-2 bg-light text-dark" style="width: 18rem;">
-                                    <img src="image/cover.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Updating Room</h5>
-                                        <p class="card-text">Update or modify any room.</p>
-                                        <input type="submit" class="btn btn-outline-success btn-lg" id="command"
-                                            name="command" value="Update-Room" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="row align-items-start justify-content-center">
-                                    <div class="card p-1 mb-2 bg-light text-dark" style="width: 18rem;">
-                                        <img src="image/cover.png" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">View Booked Room</h5>
-                                            <p class="card-text">To view booking table, check in and check out customer.
-                                            <p>
-                                                <a href="ManageBookingController?command=View-Booking-Page"
-                                                    class="btn btn-primary stretched-link">View Booking Table</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </form>
-
-        </c:when> -->
-
-   
+  
 
     </main>
 
@@ -270,22 +195,13 @@
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
     <script>
-        // $('#traveldate').datepicker({
-        //     uiLibrary: 'bootstrap4',
-        //     format: 'dd-mm-yyyy'
-        // });
 
-        // $("form").submit(function (event) {
-        //     event.preventDefault();
-        //     alert($("#traveldate").val());
-        //     return false;
-        // });
 
         $(document).ready(function () {
             const urlstring = window.location.search;
             $.ajax({
                 type: "GET",
-                url: "http://localhost/webTechTest/api/getSingleUser.php" + urlstring,
+                url: "http://localhost/Project/api/getSingleUser.php" + urlstring,
                 dataType: "json",
                 success: function (data, status, xhr) {
                     var name = "Welcome " + data.name;

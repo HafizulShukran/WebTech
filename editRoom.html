@@ -267,13 +267,14 @@
     <script>
         $(document).ready(function () {
       const urlstring = window.location.search;
+      var id = urlstring.charAt(4);
       $.ajax({
         type: "GET",
-        url: "http://localhost/api/getSingleRoom.php" + urlstring,
+        url: "http://localhost/Project/api/room/" + id,
         dataType: "json",
         success: function (data, status, xhr) {
-          document.getElementById("roomNo").value = data.roomNo;
-          document.getElementById("roomPrice").value = data.roomPrice;
+          document.getElementById("roomNo").value = data[0].roomNo;
+          document.getElementById("roomPrice").value = data[0].roomPrice;
         },
 
         error: function () {
@@ -290,7 +291,7 @@
 
         $.ajax({
             type: "POST",
-            url: "http://localhost/api/updateRoomInfo.php" + urlstring,
+            url: "http://localhost/Project/api/updateRoomInfo.php" + urlstring,
             data: formData,
             dataType: "json",
 

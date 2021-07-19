@@ -206,7 +206,7 @@
     // const urlstring = window.location.search;
     $.ajax({
       type: "GET",
-      url: "http://localhost/api/getAllRoom.php",
+      url: "http://localhost/Project/api/room",
       dataType: "json",
       success: function (data, status, xhr) {
         var tableContent = "<tr>";
@@ -243,7 +243,7 @@
 
       $.ajax({
         type: "POST",
-        url: "http://localhost/api/bookRoom.php",
+        url: "http://localhost/Project/api/bookRoom.php",
         data: formData,
         dataType: "json",
 
@@ -273,7 +273,7 @@
 
       $.ajax({
         type: "POST",
-        url: "http://localhost/api/updateRoomStatus.php?id=" + int,
+        url: "http://localhost/Project/api/updateRoomStatus.php?id=" + int,
         data: formData,
         dataType: "json",
 
@@ -300,36 +300,36 @@
   function updateStatusa(int) {
     $(document).ready(function (event) {
 
-        // var condi="roomStatus=unavailable";
+         var condi="roomStatus=unavailable";
         console.log(int);
         var formData;
-        // formData="roomStatus=available";
+         formData="roomStatus=available";
         console.log(formData); 
       
 
-      // $.ajax({
-      //   type: "POST",
-      //   url: "http://localhost/api/updateRoomStatus.php?id=" + int,
-      //   data: formData,
-      //   dataType: "json",
+       $.ajax({
+         type: "POST",
+         url: "http://localhost/Project/api/updateRoomStatus.php?id=" + int,
+         data: formData,
+         dataType: "json",
 
-      //   success: function (data, status, xhr) {
-      //     if (status == 'success') {
-      //       alert("ok, successfully add data");
-      //       window.location.href = "viewRoom.html";
-      //     } else {
-      //       alert(status);
-      //       alert("fail to insert, " + data.errormessage);
-      //     }
-      //   },
+         success: function (data, status, xhr) {
+           if (status == 'success') {
+             alert("ok, successfully add data");
+             window.location.href = "viewRoom.html";
+           } else {
+             alert(status);
+             alert("fail to insert, " + data.errormessage);
+           }
+         },
 
-      //   error: function (xhr, resp, text) {
-      //     alert("error " + xhr.error + ", " + resp + ", " + text);
-      //     console.log(xhr.responseText);
-      //     console.log(resp);
-      //     console.log(text);
-      //   },
-      // });
+         error: function (xhr, resp, text) {
+           alert("error " + xhr.error + ", " + resp + ", " + text);
+           console.log(xhr.responseText);
+           console.log(resp);
+           console.log(text);
+         },
+       });
     });
   }
 
@@ -341,13 +341,13 @@
             //NOTE: this will capture the name attribute (not id) in our form
             var formData = $(this).serialize();
             console.log(formData);  // check using console to make sure all the form data values are correctly serialized
-
+            var id = urlstring.charAt(4);
             $.ajax({
                 type: "DELETE",
-                url: "http://localhost/api/deleteRoom.php?id=" + int,
+                url: "http://localhost/Project/api/room/" + id,
                 dataType: "json",
                 success: function (data) {
-                    if (data.status=="success"){
+                    if (data.status =='success'){
                         alert("deletion succeed");
                         window.location.href = "viewRoom.html";
                     }

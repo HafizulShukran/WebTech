@@ -272,12 +272,12 @@
 
         $.ajax({
             type: "POST",
-            url: "http://localhost/api/addRoom.php",
+            url: "http://localhost/Project/api/room",
             data: formData,
             dataType: "json",
 
             success: function (data, status, xhr) {
-                if (data.rowcount > 0) {
+                if (status=="success") {
                     alert("ok, successfully add data");
                     window.location.href = "mainPage.html";
                 } else {
