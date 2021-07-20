@@ -8,8 +8,6 @@ require 'db.php';
 
 $app = new \Slim\App;
 
-
-
 $app->get('/room', function (Request $request, Response $response, array $args) {
     
     $sql = "SELECT * FROM room";
@@ -90,6 +88,43 @@ $app->post('/room', function (Request $request, Response $response, array $args)
   
 });
 
+
+$app->put('/room/status/{id}', function (Request $request, Response $response, array $args) {
+    $id = $args['id'];
+    $allPostPutVars = $request->getParsedBody();
+    $inputJSON = file_get_contents('php://input');
+    $input = json_decode($inputJSON, TRUE); 
+    
+    $roomStatus = $input["roomStatus"];
+    
+    
+    try {
+        $sql = "UPDATE room SET roomStatus = :roomStatus  WHERE roomID = $id";
+        $db = new db();
+        // Connect
+        $db = $db->connect();
+        $stmt = $db->prepare($sql);
+        
+        $stmt->bindParam(':roomStatus', $roomStatus);
+        
+        $stmt->execute();
+        $count = $stmt->rowCount();
+        $db = null;
+        
+        $data = array(
+            "status" => "success",
+            "rowcount" => $count
+        );
+        echo json_encode($data);
+    } catch (PDOException $e) {
+        $data = array(
+            "status" => "fail"
+        );
+        echo json_encode($data);
+    }
+    
+});
+
 $app->delete('/room/{id}', function (Request $request, Response $response, array $args) {
     $id = $args['id'];
     $sql = "DELETE FROM room WHERE roomID = $id";
@@ -114,75 +149,4 @@ $app->delete('/room/{id}', function (Request $request, Response $response, array
     }
 });
 
-$app->put('/room/status/{id}', function (Request $request, Response $response, array $args) {
-    $id = $args['id'];
-    $allPostPutVars = $request->getParsedBody();
-    $inputJSON = file_get_contents('php://input');
-    $input = json_decode($inputJSON, TRUE); 
-
-    $roomStatus = $input["roomStatus"];
-
-
-    try {
-        $sql = "UPDATE room SET roomStatus = :roomStatus  WHERE roomID = $id";
-        $db = new db();
-        // Connect
-        $db = $db->connect();
-        $stmt = $db->prepare($sql);
-
-        $stmt->bindParam(':roomStatus', $roomStatus);
-
-        $stmt->execute();
-        $count = $stmt->rowCount();
-        $db = null;
-
-        $data = array(
-            "status" => "success",
-            "rowcount" => $count
-        );
-        echo json_encode($data);
-    } catch (PDOException $e) {
-        $data = array(
-            "status" => "fail"
-        );
-        echo json_encode($data);
-    }
-   
-});
-
-$app->put('/room/status/{id}', function (Request $request, Response $response, array $args) {
-    $id = $args['id'];
-    $allPostPutVars = $request->getParsedBody();
-    $inputJSON = file_get_contents('php://input');
-    $input = json_decode($inputJSON, TRUE); 
-
-    $roomStatus = "unavailable";
-
-
-    try {
-        $sql = "UPDATE room SET roomStatus = :roomStatus  WHERE roomID = $id";
-        $db = new db();
-        // Connect
-        $db = $db->connect();
-        $stmt = $db->prepare($sql);
-
-        $stmt->bindParam(':roomStatus', $roomStatus);
-
-        $stmt->execute();
-        $count = $stmt->rowCount();
-        $db = null;
-
-        $data = array(
-            "status" => "success",
-            "rowcount" => $count
-        );
-        echo json_encode($data);
-    } catch (PDOException $e) {
-        $data = array(
-            "status" => "fail"
-        );
-        echo json_encode($data);
-    }
-   
-});
 $app->run();    
