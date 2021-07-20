@@ -228,7 +228,7 @@
   $("#booking").submit(function (event) {
     event.preventDefault();
     var formData = $(this).serialize();
-    console.log(formData); 
+    console.log(formData);
 
     $.ajax({
       type: "POST",
@@ -259,7 +259,6 @@
       formData = "roomStatus=unavailable";
       console.log(formData);
 
-
       $.ajax({
         type: "POST",
         url: "http://localhost/WebTech/api/updateRoomStatus.php?id=" + int,
@@ -268,7 +267,7 @@
 
         success: function (data, status, xhr) {
           if (status == 'success') {
-            alert("ok, successfully add data");
+            alert("Room is now unavailable");
             window.location.href = "viewRoom.html";
           } else {
             alert(status);
@@ -303,7 +302,7 @@
 
         success: function (data, status, xhr) {
           if (status == 'success') {
-            alert("ok, successfully add data");
+            alert("Room is now available");
             window.location.href = "viewRoom.html";
           } else {
             alert(status);
@@ -332,7 +331,7 @@
       dataType: "json",
       success: function (data) {
         if (data.status == 'success') {
-          alert("deletion succeed");
+          alert("Room deleted successfully");
           window.location.href = "viewRoom.html";
         }
         else {

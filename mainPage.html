@@ -83,7 +83,6 @@
 </head>
 
 <body>
-    <!-- role="main" class="container"> -->
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
 
@@ -108,26 +107,12 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="aboutUs.html">About us</a>
                     </li>
-
-
-
-
                 </ul>
-
-              o  <ul class="navbar-nav">
-
-
-
+                <ul class="navbar-nav">
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- 
-    <c:choose>
-
-        <c:when test="${CLIENT != null}"> -->
-    <!-- <% Client client=(Client)session.getAttribute("CLIENT"); %> -->
 
     <div class="container pb-5">
         <div class="row align-items-start justify-content-center">
@@ -141,8 +126,7 @@
                         <h5 class="card-title">Add A Room</h5>
                         <p class="card-text">Search, and book for any available room</p>
                         <!-- <a href="viewRoomAvailable.html"  -->
-                            <a href="addRoom.html"
-                        class="btn btn-primary stretched-link">Book Room</a>
+                        <a href="addRoom.html" class="btn btn-primary stretched-link">Book Room</a>
                     </div>
                 </div>
             </div>
@@ -152,15 +136,9 @@
                     <div class="card-body">
                         <h5 class="card-title">View Room</h5>
                         <p class="card-text">See if you have any upcoming booking</p>
-                        <!-- <form name="viewMyBooking" method="post"
-                                    action="${pageContext.request.contextPath}/ClientController"> -->
                         <div class="d-grid gap-2 mx-auto pt-1">
-                            <!-- <input class=" btn btn-primary " type="submit" style="width:55%" id="command" name="command"
-                                value="My-Booking"> -->
-                                <a href="viewRoom.html" class="btn btn-primary stretched-link">My Booking</a>
+                            <a href="viewRoom.html" class="btn btn-primary stretched-link">My Booking</a>
                         </div>
-
-                        <!-- <input type="hidden" name="clientID" value="%=client.getID()% "> -->
                         </form>
                     </div>
                 </div>
@@ -179,11 +157,7 @@
         </div>
     </div>
 
-  
-
     </main>
-
-
 
     <footer class="container">
 
@@ -193,27 +167,6 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-
-    <script>
-
-
-        $(document).ready(function () {
-            const urlstring = window.location.search;
-            $.ajax({
-                type: "GET",
-                url: "http://localhost/Project/api/getSingleUser.php" + urlstring,
-                dataType: "json",
-                success: function (data, status, xhr) {
-                    var name = "Welcome " + data.name;
-                    document.querySelector("#name").innerHTML = name;
-                },
-
-                error: function () {
-                    alert(status)
-                }
-            });
-        });
-    </script>
 
 </body>
 <script>

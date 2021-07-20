@@ -85,7 +85,6 @@ $app->post('/room', function (Request $request, Response $response, array $args)
         );
         echo json_encode($data);
     }
-  
 });
 
 
